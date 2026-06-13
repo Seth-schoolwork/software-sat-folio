@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SD SAT - System Diagrams</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f5f5;
+}
+
+.project_name{
+    font-size:28px;
+    font-weight:bold;
+    border-top:5px solid #6d9ec6;
+    background:#dddddd;
+    padding:12px;
+}
+
+.tabs{
+    background:#6d9ec6;
+    text-align:center;
+    padding:10px;
+}
+
+.tab-button{
+    border:none;
+    background:white;
+    padding:10px 20px;
+    margin:0 5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.tab-button:hover{
+    background:#eeeeee;
+}
+
+.tab-button.active{
+    background:#d9e7f3;
+}
+
+.content{
+    max-width:1400px;
+    margin:auto;
+    padding:20px;
+}
+
+.diagram-panel{
+    display:none;
+}
+
+.diagram-panel.active{
+    display:block;
+}
+
+.viewer{
+    height:700px;
+    overflow:auto;
+    background:white;
+    border:1px solid #cccccc;
+}
+
+.viewer object{
+    width:100%;
+    min-width:1200px;
+    height:1200px;
+}
+
+.description{
+    margin-top:15px;
+    background:white;
+    padding:15px;
+    border-left:5px solid #6d9ec6;
+}
+
+.usecase-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+.usecase-table th,
+.usecase-table td{
+    border:2px solid #333333;
+    padding:12px;
+    text-align:left;
+}
+
+.usecase-table th{
+    background:#f0f0f0;
+}
+
+.footer{
+    background:#6d9ec6;
+    color:white;
+    text-align:center;
+    padding:10px;
+    margin-top:30px;
+}
+
+</style>
+
+<script>
+
+function showTab(tabId){
+
+    document.querySelectorAll('.diagram-panel')
+        .forEach(panel => panel.classList.remove('active'));
+
+    document.querySelectorAll('.tab-button')
+        .forEach(button => button.classList.remove('active'));
+
+    document.getElementById(tabId)
+        .classList.add('active');
+
+    document.getElementById(tabId + '-btn')
+        .classList.add('active');
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="project_name">
+    SD SAT - Seth Daly (2026)
+</div>
+
+<div class="tabs">
+
+```
+<button id="context-btn"
+        class="tab-button active"
+        onclick="showTab('context')">
+    Context Diagram
+</button>
+
+<button id="dfd-btn"
+        class="tab-button"
+        onclick="showTab('dfd')">
+    Data Flow Diagram
+</button>
+
+<button id="usecase-btn"
+        class="tab-button"
+        onclick="showTab('usecase')">
+    Use Case Diagram
+</button>
+```
+
+</div>
+
+<div class="content">
+
+```
+<!-- CONTEXT -->
+
+<div id="context" class="diagram-panel active">
+
+    <div class="viewer">
+        <object data="context.svg"
+                type="image/svg+xml">
+        </object>
+    </div>
+
+    <div class="description">
+        <h3>Context Diagram</h3>
+
+        <p>
+            Replace with your context diagram explanation.
+        </p>
+    </div>
+
+</div>
+
+<!-- DFD -->
+
+<div id="dfd" class="diagram-panel">
+
+    <div class="viewer">
+        <object data="dfd.svg"
+                type="image/svg+xml">
+        </object>
+    </div>
+
+    <div class="description">
+        <h3>Data Flow Diagram</h3>
+
+        <p>
+            Replace with your DFD explanation.
+        </p>
+    </div>
+
+</div>
+
+<!-- USE CASE -->
+
+<div id="usecase" class="diagram-panel">
+
+    <div class="viewer">
+        <object data="usecase.svg"
+                type="image/svg+xml">
+        </object>
+    </div>
+
+    <div class="description">
+
+        <h3>Use Case Diagram</h3>
+
+        <p>
+            Replace with your use case diagram explanation.
+        </p>
+
+        <h3>Use Case Descriptions</h3>
+
+        <table class="usecase-table">
+
+            <tr>
+                <th>No.</th>
+                <th>Use Case</th>
+                <th>Notes</th>
+            </tr>
+
+            <tr>
+                <td>UC1</td>
+                <td>Identify Fern</td>
+                <td>Description here.</td>
+            </tr>
+
+            <tr>
+                <td>UC2</td>
+                <td>Verify Location</td>
+                <td>Description here.</td>
+            </tr>
+
+            <tr>
+                <td>UC3</td>
+                <td>View Fern Information</td>
+                <td>Description here.</td>
+            </tr>
+
+            <tr>
+                <td>UC4</td>
+                <td>Warn User</td>
+                <td>Description here.</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+<div class="footer">
+    SD SAT Documentation
+</div>
+
+</body>
+</html>
