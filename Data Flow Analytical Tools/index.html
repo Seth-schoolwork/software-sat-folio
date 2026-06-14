@@ -190,10 +190,12 @@ function showTab(tabId){
     </div>
 
     <div class="description">
-        <h3>Data Flow Diagram</h3>
+        <h3>Overview</h3>
 
         <p>
-            Replace with your DFD explanation.
+            The inputted data from the "Users" external entity is manipulated within the information system to verify their location and provide a fern match that is then returned to the user as
+            an identification result, this process is possible due to the feeding of fern image data and fern keys from the fern database. Otherwise, the "Developer" external entity inputs data
+            regarding training images and new fern keys to be processed and categorised and added to the fern database, with the developer then recieving processed misidentification report data.
         </p>
     </div>
 
@@ -209,10 +211,15 @@ function showTab(tabId){
 
     <div class="description">
 
-        <h3>Use Case Diagram</h3>
+        <h3>Overview</h3>
 
         <p>
-            Replace with your use case diagram explanation.
+            The solution includes two actors: one primary actor (the User) and one secondary actor (the Developer). The User actor is associated
+            with use cases such as inputting an image of their fern and answering questions about fern characteristics, These use cases are linked to include use case, 
+            "Verify Location", which validates that the User actor is within Wyndham. If the User actor is outside, the extend use case, "Display Location Warning" 
+            is triggered to inform them. Additionally, the extended use case, Report Misidentification, allows the user to provide feedback when an incorrect identification 
+            result is returned. Meanwhile, the Developer actor is associated with reading misidentification reports and providing fern key data and training images used by 
+            the system.
         </p>
 
         <h3>Use Case Descriptions</h3>
@@ -227,26 +234,50 @@ function showTab(tabId){
 
             <tr>
                 <td>UC1</td>
-                <td>Identify Fern</td>
-                <td>Description here.</td>
+                <td>Input Image</td>
+                <td>"User" actor inputs an image of their fern into the system for identification.</td>
             </tr>
-
+            
             <tr>
                 <td>UC2</td>
-                <td>Verify Location</td>
-                <td>Description here.</td>
+                <td>Answer Key Question</td>
+                <td>"User" actor provides answers on fern characteristics into the system for identification.</td>
             </tr>
 
             <tr>
                 <td>UC3</td>
-                <td>View Fern Information</td>
-                <td>Description here.</td>
+                <td>Verify Location (Include Use Case)</td>
+                <td>The system verifies whether the user's location is within Wyndham City.</td>
             </tr>
 
             <tr>
                 <td>UC4</td>
-                <td>Warn User</td>
-                <td>Description here.</td>
+                <td>Display Location Warning (Extend Use Case)</td>
+                <td>The system displays a warning when the user's location is outside Wyndham City.</td>
+            </tr>
+
+            <tr>
+                <td>UC5</td>
+                <td>Report Misidentification (Extend Use Case)</td>
+                <td>"User" actor submits a misidentification report when an incorrect fern identification result is returned.</td>
+            </tr>
+
+            <tr>
+                <td>UC6</td>
+                <td>Read Misidentification Report</td>
+                <td>"Developer" actor reads misidentification reports from system.</td>
+            </tr>
+
+            <tr>
+                <td>UC7</td>
+                <td>Provide Fern Keys</td>
+                <td>"Developer" actor provides fern key data for system.</td>
+            </tr>
+
+            <tr>
+                <td>UC8</td>
+                <td>Provide Training Images</td>
+                <td>"Developer" actor provides fern training images for system.</td>
             </tr>
 
         </table>
