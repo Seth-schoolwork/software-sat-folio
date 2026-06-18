@@ -133,6 +133,19 @@ margin-top:30px;
 font-weight:500;
 }
 
+.diagram-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.download-mini button{
+    padding:8px 14px;
+    font-size:12px;
+    border-radius:6px;
+}
+
 </style>
 
 <script>
@@ -193,6 +206,14 @@ function showTab(tabId){
 
 <div id="context" class="diagram-panel active">
 
+    <div class="diagram-header">
+        <h3>Context Diagram</h3>
+
+        <a href="Context Diagram.png" download class="download-mini">
+            <button class="tab-button">Download</button>
+        </a>
+    </div>
+
     <div class="viewer">
         <img src="Context Diagram.png" style="width:100%;" />
     </div>
@@ -214,6 +235,14 @@ function showTab(tabId){
 
 <div id="dfd" class="diagram-panel">
 
+    <div class="diagram-header">
+        <h3>Data Flow Diagram</h3>
+
+        <a href="Data Flow Diagram.png" download class="download-mini">
+            <button class="tab-button">Download</button>
+        </a>
+    </div>
+
     <div class="viewer">
         <img src="Data Flow Diagram.png" style="width:100%;" />
     </div>
@@ -233,6 +262,15 @@ function showTab(tabId){
 <!-- USE CASE -->
 
 <div id="usecase" class="diagram-panel">
+
+    <div class="diagram-header">
+        <h3>Use Case Diagram</h3>
+
+        <a href="Use Case Diagram.png" download class="download-mini">
+            <button class="tab-button">Download</button>
+        </a>
+    </div>
+
 
     <div class="viewer">
         <img src="Use Case Diagram.png" style="width:100%;" />
