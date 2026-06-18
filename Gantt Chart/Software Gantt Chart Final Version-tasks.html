@@ -29,7 +29,6 @@ box-shadow:0 2px 8px rgba(0,0,0,0.15);
 background:#57BB8A;
 text-align:center;
 padding:12px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
 .tab-button{
@@ -40,12 +39,6 @@ margin:0 6px;
 cursor:pointer;
 font-weight:600;
 border-radius:8px;
-transition:all 0.2s ease;
-}
-
-.tab-button:hover{
-background:#f1f1f1;
-transform:translateY(-1px);
 }
 
 .tab-button.active{
@@ -81,12 +74,12 @@ background:#57BB8A;
 color:white;
 padding:14px;
 text-align:left;
-font-weight:600;
 }
 
 td{
 border:1px solid #e6e6e6;
 padding:12px;
+vertical-align:top;
 }
 
 tr:nth-child(even){
@@ -103,13 +96,11 @@ color:white;
 text-align:center;
 padding:15px;
 margin-top:30px;
-font-weight:500;
 }
 
 </style>
 
 <script>
-
 function showTab(tabId){
 
 document.querySelectorAll('.panel')
@@ -122,7 +113,6 @@ document.getElementById(tabId).classList.add('active');
 document.getElementById(tabId + '-btn').classList.add('active');
 
 }
-
 </script>
 
 </head>
@@ -134,119 +124,132 @@ Software Development SAT | Project Plan
 </div>
 
 <div class="tabs">
-
+  
 <button id="analysis-btn" class="tab-button active" onclick="showTab('analysis')">Analysis</button>
 <button id="design-btn" class="tab-button" onclick="showTab('design')">Design</button>
 <button id="development-btn" class="tab-button" onclick="showTab('development')">Development</button>
 <button id="evaluation-btn" class="tab-button" onclick="showTab('evaluation')">Evaluation</button>
 
+  <a href="index.html">
+    <button class="tab-button">Gantt Chart</button>
+</a>
+
 </div>
 
 <div class="content">
 
-<!-- ================= ANALYSIS ================= -->
+<!-- ANALYSIS -->
 <div id="analysis" class="panel active">
-
 <table>
-<tr><th>Task</th><th>Begin</th><th>End</th></tr>
+<tr><th>Task</th><th>Begin Date</th><th>End Date</th></tr>
 
-<tr><td>Analysis Phase</td><td>5/5/26</td><td>4/6/26</td></tr>
-<tr><td>1.1 Develop a Brief</td><td>5/5/26</td><td>7/5/26</td></tr>
-<tr><td>1.2 Prepare Gantt Chart</td><td>8/5/26</td><td>15/5/26</td></tr>
-<tr><td>1.3 Document Gantt Chart</td><td>18/5/26</td><td>20/5/26</td></tr>
+<tr><td>Analysis</td><td>5/5/26</td><td>3/6/26</td></tr>
+
+<tr><td>1.1 - Develop a Brief</td><td>5/5/26</td><td>7/5/26</td></tr>
+<tr><td>1.2 - Prepare Gantt Chart</td><td>8/5/26</td><td>15/5/26</td></tr>
+<tr><td>1.3 - Document Gantt Chart</td><td>18/5/26</td><td>20/5/26</td></tr>
+
 <tr><td>Criteria 1 Completion</td><td>21/5/26</td><td>21/5/26</td></tr>
 
-<tr><td>2.1 Document & Prepare Data</td><td>21/5/26</td><td>25/5/26</td></tr>
-<tr><td>2.2 Users, Data & Systems Relationship</td><td>26/5/26</td><td>27/5/26</td></tr>
+<tr><td>2.1 - Document & Prepare Data</td><td>21/5/26</td><td>25/5/26</td></tr>
+<tr><td>2.2 - Illustrate the Relationship between Users, Data & Systems</td><td>26/5/26</td><td>27/5/26</td></tr>
+
 <tr><td>Criteria 2 Completion</td><td>28/5/26</td><td>28/5/26</td></tr>
 
-<tr><td>3.1 SRS Requirements & Constraints</td><td>28/5/26</td><td>1/6/26</td></tr>
-<tr><td>3.2 Critical & Creative Thinking</td><td>2/6/26</td><td>3/6/26</td></tr>
+<tr><td>3.1 - Document Proposed Software Solution as part of SRS (requirements, scope & constraints)</td><td>28/5/26</td><td>1/6/26</td></tr>
+
+<tr><td>3.2 - Document Process of Critical and Creative Thinking</td><td>2/6/26</td><td>3/6/26</td></tr>
+
 <tr><td>Criteria 3 Completion</td><td>4/6/26</td><td>4/6/26</td></tr>
 
 <tr><td>Analysis Completion</td><td>4/6/26</td><td>4/6/26</td></tr>
 
 </table>
-
 </div>
 
-<!-- ================= DESIGN ================= -->
+<!-- DESIGN -->
 <div id="design" class="panel">
-
 <table>
-<tr><th>Task</th><th>Begin</th><th>End</th></tr>
+<tr><th>Task</th><th>Begin Date</th><th>End Date</th></tr>
 
-<tr><td>Design Phase</td><td>4/6/26</td><td>18/6/26</td></tr>
+<tr><td>Design</td><td>4/6/26</td><td>15/6/26</td></tr>
 
-<tr><td>4.1 Generate Design Ideas</td><td>4/6/26</td><td>8/6/26</td></tr>
-<tr><td>4.2 Evaluation Criteria</td><td>9/6/26</td><td>9/6/26</td></tr>
+<tr><td>4.1 - Generate Design Ideas (Solution Design)</td><td>4/6/26</td><td>8/6/26</td></tr>
+<tr><td>4.2 - Develop & Apply Evaluation Criteria (Evaluation Criteria)</td><td>9/6/26</td><td>9/6/26</td></tr>
+
 <tr><td>Criteria 4 Completion</td><td>10/6/26</td><td>10/6/26</td></tr>
 
-<tr><td>5.1 Detailed Designs</td><td>10/6/26</td><td>10/6/26</td></tr>
-<tr><td>5.2 Design Principles</td><td>15/6/26</td><td>15/6/26</td></tr>
-<tr><td>5.3 Critical & Creative Thinking</td><td>15/6/26</td><td>15/6/26</td></tr>
+<tr><td>5.1 - Produce Detailed Designs (Solution Design)</td><td>10/6/26</td><td>10/6/26</td></tr>
+<tr><td>5.2 - Document the use of Design Principles</td><td>15/6/26</td><td>15/6/26</td></tr>
+<tr><td>5.3 - Document the Process of Critical and Creative Thinking</td><td>15/6/26</td><td>15/6/26</td></tr>
 
 <tr><td>Criteria 5 Completion</td><td>18/6/26</td><td>18/6/26</td></tr>
-<tr><td>Design Completion</td><td>18/6/26</td><td>18/6/26</td></tr>
 
 </table>
-
 </div>
 
-<!-- ================= DEVELOPMENT ================= -->
+<!-- DEVELOPMENT -->
 <div id="development" class="panel">
-
 <table>
-<tr><th>Task</th><th>Begin</th><th>End</th></tr>
+<tr><th>Task</th><th>Begin Date</th><th>End Date</th></tr>
 
-<tr><td>Development Phase</td><td>18/6/26</td><td>20/8/26</td></tr>
+<tr><td>Development</td><td>18/6/26</td><td>19/8/26</td></tr>
 
-<tr><td>6.1 Programming Features</td><td>18/6/26</td><td>22/7/26</td></tr>
-<tr><td>6.2 Data Types</td><td>22/6/26</td><td>6/7/26</td></tr>
+<tr><td>6.1 - Develop the Solution using a Range of Programming Features (Manipulation)</td><td>18/6/26</td><td>22/7/26</td></tr>
 
-<tr><td>7.1 Naming Conventions</td><td>23/7/26</td><td>31/7/26</td></tr>
-<tr><td>7.2 Internal Documentation</td><td>24/6/26</td><td>31/7/26</td></tr>
-<tr><td>7.3 Validation Techniques</td><td>23/7/26</td><td>6/8/26</td></tr>
+<tr><td>6.2 - Create and Utilise a Range of Data Types</td><td>22/6/26</td><td>6/7/26</td></tr>
+
+<tr><td>7.1 - Verify use of Suitable Naming Conventions</td><td>23/7/26</td><td>31/7/26</td></tr>
+
+<tr><td>7.2 - Write Internal Documentation (Documentation)</td><td>24/6/26</td><td>31/7/26</td></tr>
+
+<tr><td>7.3 - Apply Appropriate Validation Techniques (Validation)</td><td>23/7/26</td><td>6/8/26</td></tr>
 
 <tr><td>Criteria 6 Completion</td><td>7/8/26</td><td>7/8/26</td></tr>
+
 <tr><td>Criteria 7 Completion</td><td>7/8/26</td><td>7/8/26</td></tr>
 
-<tr><td>8.1 Debugging & Testing</td><td>7/8/26</td><td>10/8/26</td></tr>
-<tr><td>8.2 Critical & Creative Thinking</td><td>11/8/26</td><td>12/8/26</td></tr>
+<tr><td>8.1 - Document the Use of Debugging and Testing Techniques (Testing & Documentation)</td><td>7/8/26</td><td>10/8/26</td></tr>
+
+<tr><td>8.2 - Document the Process of Critical and Creative Thinking</td><td>11/8/26</td><td>12/8/26</td></tr>
 
 <tr><td>Criteria 8 Completion</td><td>13/8/26</td><td>13/8/26</td></tr>
 
-<tr><td>9.1 Beta Testing Plan</td><td>13/8/26</td><td>14/8/26</td></tr>
-<tr><td>9.2 Conduct Beta Testing</td><td>17/8/26</td><td>18/8/26</td></tr>
-<tr><td>9.3 Results</td><td>19/8/26</td><td>19/8/26</td></tr>
-<tr><td>9.4 Recommendations</td><td>19/8/26</td><td>19/8/26</td></tr>
+<tr><td>9.1 - Prepare Beta Testing Plan and Test Scenarios (Testing)</td><td>13/8/26</td><td>14/8/26</td></tr>
+
+<tr><td>9.2 - Conduct Beta Testing (Testing)</td><td>17/8/26</td><td>18/8/26</td></tr>
+
+<tr><td>9.3 - Document Results of Beta Testing (Documentation)</td><td>19/8/26</td><td>19/8/26</td></tr>
+
+<tr><td>9.4 - Document Recommended Modifications Based on Results (Documentation)</td><td>19/8/26</td><td>19/8/26</td></tr>
 
 <tr><td>Criteria 9 Completion</td><td>20/8/26</td><td>20/8/26</td></tr>
 
 <tr><td>Development Completion</td><td>20/8/26</td><td>20/8/26</td></tr>
 
 </table>
-
 </div>
 
-<!-- ================= EVALUATION ================= -->
+<!-- EVALUATION -->
 <div id="evaluation" class="panel">
-
 <table>
-<tr><th>Task</th><th>Begin</th><th>End</th></tr>
+<tr><th>Task</th><th>Begin Date</th><th>End Date</th></tr>
 
-<tr><td>Evaluation Phase</td><td>20/8/26</td><td>27/8/26</td></tr>
+<tr><td>Evaluation</td><td>20/8/26</td><td>26/8/26</td></tr>
 
-<tr><td>10.1 Efficiency & Effectiveness</td><td>20/8/26</td><td>20/8/26</td></tr>
-<tr><td>10.2 Critical Thinking Evidence</td><td>21/8/26</td><td>21/8/26</td></tr>
-<tr><td>10.3 Project Plan Modifications</td><td>25/8/26</td><td>25/8/26</td></tr>
-<tr><td>10.4 Effectiveness Assessment</td><td>26/8/26</td><td>26/8/26</td></tr>
+<tr><td>10.1 - Document the Evaluation of Efficiency and Effectiveness (Report)</td><td>20/8/26</td><td>20/8/26</td></tr>
+
+<tr><td>10.2 - Document Evidence of Critical & Creative Thinking</td><td>21/8/26</td><td>21/8/26</td></tr>
+
+<tr><td>10.3 - Document Modifications made to Initial Project Plan (Report)</td><td>25/8/26</td><td>25/8/26</td></tr>
+
+<tr><td>10.4 - Assess the Effectiveness of the Project Plan (Strategy)</td><td>26/8/26</td><td>26/8/26</td></tr>
 
 <tr><td>Criteria 10 Completion</td><td>27/8/26</td><td>27/8/26</td></tr>
+
 <tr><td>Project Completion</td><td>27/8/26</td><td>27/8/26</td></tr>
 
 </table>
-
 </div>
 
 </div>
