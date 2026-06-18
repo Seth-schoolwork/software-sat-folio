@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="SD SAT - Seth Daly (2026)" company="" webLink="http://" view-date="2026-05-19" view-index="0" gantt-divider-location="317" resource-divider-location="300" version="3.3.3311" locale="en_AU">
+    <description/>
+    <view zooming-state="default:3" id="gantt-chart">
+        <field id="tpd3" name="Name" width="171" order="0"/>
+        <field id="tpd4" name="Begin date" width="65" order="1"/>
+        <field id="tpd5" name="End date" width="65" order="2"/>
+        <field id="tpd15" name="Notes" width="20" order="3"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="color.recent"><![CDATA[#99ccff #66ccff #ff9999 #666666 #999999 #cccccc]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars base-id="none">
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+        <date year="2026" month="6" date="11" type="HOLIDAY" color="#ff9999"><![CDATA[Camp]]></date>
+        <date year="2026" month="6" date="12" type="HOLIDAY" color="#ff9999"><![CDATA[Camp]]></date>
+        <date year="2026" month="6" date="16" type="HOLIDAY" color="#ff9999"><![CDATA[GAT]]></date>
+        <date year="2026" month="6" date="17" type="HOLIDAY" color="#ff9999"><![CDATA[GAT]]></date>
+        <date year="2026" month="8" date="24" type="HOLIDAY" color="#ff9999"><![CDATA[Curriculum Day]]></date>
+        <date year="2026" month="6" date="6" type="HOLIDAY" color="#ff9999"><![CDATA[King's Birthday]]></date>
+        <date year="2026" month="6" date="27" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="6" date="28" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="6" date="29" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="6" date="30" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="1" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="2" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="3" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="4" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="5" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="6" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="7" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="8" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="9" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="10" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="11" type="WORKING_DAY" color="#99ccff"><![CDATA[School Holiday]]></date>
+        <date year="2026" month="7" date="12" type="WORKING_DAY" color="#99ccff"/>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" uid="2535c8d7521e403ba59cc6cd17661983" name="Analysis" meeting="false" start="2026-05-05" duration="22" complete="0" expand="true">
+            <depend id="31" type="2" difference="0" hardness="Strong"/>
+            <task id="4" uid="98d5ae2443754e8b9271df0cc036cdd3" name="1.1 - Develop a Brief" meeting="false" start="2026-05-05" duration="3" complete="0" expand="true">
+                <depend id="5" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="5" uid="ecd0876c63e34d0886aa0a7ee3fd713f" name="1.2 - Prepare Gantt Chart" meeting="false" start="2026-05-08" duration="6" complete="0" expand="true">
+                <depend id="6" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="6" uid="cf4674b506994e53973bbe98e525b4d5" name="1.3 - Document Gantt Chart" meeting="false" start="2026-05-18" duration="3" complete="0" expand="true">
+                <depend id="36" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="36" uid="1f4dbb5163384abea1b64ca1d7675698" name="Criteria 1 Completion" meeting="true" start="2026-05-21" duration="0" complete="0" expand="true">
+                <depend id="7" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="7" uid="73302f1e1ba7407183876e7d560d3e5f" name="2.1 - Document &amp; Prepare Data" meeting="false" start="2026-05-21" duration="3" complete="0" expand="true">
+                <depend id="8" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="8" uid="af080d65c7ad4682afa14ead93fd8b39" name="2.2 - Illustrate the Relationship between Users, Data &amp; Systems" meeting="false" start="2026-05-26" duration="2" complete="0" expand="true">
+                <depend id="37" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="37" uid="8b7d1a9321cb412aae4b28eeee81fcd5" name="Criteria 2 Completion" meeting="true" start="2026-05-28" duration="0" complete="0" expand="true">
+                <depend id="9" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="9" uid="f06814a653c24e238604c86df0f9a171" name="3.1 - Document Proposed Software Solution as part of SRS (requirements, scope &amp; constraints)" meeting="false" start="2026-05-28" duration="3" complete="0" expand="true">
+                <depend id="10" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="10" uid="c4180b75532747b0988a502346f58d36" name="3.2 - Document Process of Critical and Creative Thinking" meeting="false" start="2026-06-02" duration="2" complete="0" expand="true">
+                <depend id="38" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="38" uid="cdd54972e0f543cdb2152a6dd17bdbc2" name="Criteria 3 Completion" meeting="true" start="2026-06-04" duration="0" complete="0" expand="true"/>
+        </task>
+        <task id="31" uid="a29b84dbe02749eda8481fafaad3d721" name="Analysis Completion" meeting="true" start="2026-06-04" duration="0" complete="0" expand="true">
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" uid="08ae1314f49240d2884d8c3664fe2301" name="Design" meeting="false" start="2026-06-04" duration="6" complete="0" expand="true">
+            <depend id="32" type="2" difference="0" hardness="Strong"/>
+            <task id="11" uid="6f9efc3287734cc783a8b786ba76ee72" name="4.1 - Generate Design Ideas (Solution Design)" meeting="false" start="2026-06-04" duration="3" complete="0" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="12" uid="84cb2ae3e0b04690967ffa27cec80af8" name="4.2 - Develop &amp; Apply Evaluation Criteria (Evaluation Criteria)" meeting="false" start="2026-06-09" duration="1" complete="0" expand="true">
+                <depend id="39" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="39" uid="64c0cd35fae64374b455f454f98561c4" name="Criteria 4 Completion" meeting="true" start="2026-06-10" duration="0" complete="0" expand="true">
+                <depend id="13" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="13" uid="bbe6375c8ec6430d8d9dc78f2a896b35" name="5.1 - Produce Detailed Designs (Solution Design)" meeting="false" start="2026-06-10" duration="1" complete="0" expand="true">
+                <depend id="14" type="2" difference="0" hardness="Strong"/>
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="14" uid="3e4afde852884ca59b8e1b42067a1600" name="5.2 - Document the use of Design Principles" meeting="false" start="2026-06-15" duration="1" complete="0" expand="true"/>
+            <task id="15" uid="c38653c5fad6491c9cba9ed0bfecdfe2" name="5.3 - Document the Process of Critical and Creative Thinking" meeting="false" start="2026-06-15" duration="1" complete="0" expand="true">
+                <depend id="40" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="40" uid="3d56467c7a194e4dbfa5c0666a312b0f" name="Criteria 5 Completion" meeting="true" start="2026-06-18" duration="0" complete="0" expand="true"/>
+        </task>
+        <task id="32" uid="05ae6defdb8344c28f33fc440138f6f3" name="Design Completion" meeting="true" start="2026-06-18" duration="0" complete="0" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" uid="b0b773240e134b1796a04b833448056c" name="Development" meeting="false" start="2026-06-18" duration="51" complete="0" expand="true">
+            <depend id="33" type="2" difference="0" hardness="Strong"/>
+            <task id="16" uid="7b9c4c71bb0d4ed59d5adf58aa5ce719" name="6.1 - Develop the Solution using a Range of Programming Features (Manipulation)" meeting="false" start="2026-06-18" duration="31" complete="0" expand="true">
+                <depend id="18" type="2" difference="0" hardness="Strong"/>
+                <depend id="20" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="17" uid="399ccb43d70c4003be5b5f454912fa51" name="6.2 - Create and Ulitilise a Range of Data Types" meeting="false" start="2026-06-22" duration="15" complete="0" expand="true"/>
+            <task id="18" uid="d81f227c533e4b1b957c54f764fe3b5a" name="7.1 - Verify use of Suitable Naming Conventions" meeting="false" start="2026-07-23" duration="7" complete="0" expand="true"/>
+            <task id="19" uid="620626a3069d43009802b0fc11c0ee28" name="7.2 - Write Internal Documentation (Documentation)" meeting="false" start="2026-06-24" duration="34" complete="0" expand="true"/>
+            <task id="20" uid="5cbf92d0f5384672afba9a44af18e681" name="7.3 - Apply Appropriate Validation Techniques (Validation)" meeting="false" start="2026-07-23" duration="11" complete="0" expand="true">
+                <depend id="42" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="41" uid="aad614f0284646709e40eca9180a53db" name="Criteria 6 Completion" meeting="true" start="2026-08-07" duration="0" complete="0" expand="true">
+                <depend id="42" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="42" uid="b41ac945fe1547709bef051271ba25e3" name="Criteria 7 Completion" meeting="true" start="2026-08-07" duration="0" complete="0" expand="true">
+                <depend id="21" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="21" uid="3c7ecc1bc62f4b39a746322608594a20" name="8.1 - Document the Use of Debugging and Testing Techniques (Testing &amp; Documentation)" meeting="false" start="2026-08-07" duration="2" complete="0" expand="true">
+                <depend id="22" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="22" uid="bcc3a2f8678b463fbd416d3fb16909f4" name="8.2 - Document the Process of Critical and Creative Thinking" meeting="false" start="2026-08-11" duration="2" complete="0" expand="true">
+                <depend id="43" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="43" uid="25bf73b30fdf4e30874cb8b03d6e8e5a" name="Criteria 8 Completion" meeting="true" start="2026-08-13" duration="0" complete="0" expand="true">
+                <depend id="23" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="23" uid="eb1a99a0470140fd8cf85c8b014693e9" name="9.1 - Prepare Beta Testing Plan and Test Scenarios (Testing)" meeting="false" start="2026-08-13" duration="2" complete="0" expand="true">
+                <depend id="24" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="24" uid="da1fc1b162b84ff699dbaee952a40d5c" name="9.2 - Conduct Beta Testing (Testing)" meeting="false" start="2026-08-17" duration="2" complete="0" expand="true">
+                <depend id="25" type="2" difference="0" hardness="Strong"/>
+                <depend id="26" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="25" uid="e43c7f0528c24aa9b923fc70f6913eea" name="9.3 - Document Results of Beta Testing (Documentation)" meeting="false" start="2026-08-19" duration="1" complete="0" expand="true"/>
+            <task id="26" uid="f32372e21d9c4fa1ab965bbf5abce3d7" name="9.4 - Document Recommended Modifications Based on Results (Documentation)" meeting="false" start="2026-08-19" duration="1" complete="0" expand="true">
+                <depend id="44" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="44" uid="f49e31c9e420423c8b2d952c36342862" name="Criteria 9 Completion" meeting="true" start="2026-08-20" duration="0" complete="0" expand="true"/>
+        </task>
+        <task id="33" uid="c40c2f44d52d4172a9f5a2416d0b169e" name="Development Completion" meeting="true" start="2026-08-20" duration="0" complete="0" expand="true">
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" uid="bf11e7b1f5304f8394ad5936233bbf58" name="Evaluation" meeting="false" start="2026-08-20" duration="4" complete="0" expand="true">
+            <depend id="34" type="2" difference="0" hardness="Strong"/>
+            <task id="27" uid="a17958f7bcbc4a2bae5e8123e0067c03" name="10.1 - Document the Evaluation of Efficiency and Effectiveness (Report)" meeting="false" start="2026-08-20" duration="1" complete="0" expand="true">
+                <depend id="28" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="28" uid="5f61ca2e24964171beda45809dcde066" name="10.2 - Document Evidence of Critical &amp; Creative Thinking" meeting="false" start="2026-08-21" duration="1" complete="0" expand="true">
+                <depend id="29" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="29" uid="abd03b81bfe3461ab41386ffb9e31fc3" name="10.3 - Document Modifications made to Initial Project Plan (Report)" meeting="false" start="2026-08-25" duration="1" complete="0" expand="true">
+                <depend id="30" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="30" uid="a656e5185eb14de68692600c8c83142e" name="10.4 - Assess the Effectiveness of the Project Plan (Strategy)" meeting="false" start="2026-08-26" duration="1" complete="0" expand="true">
+                <depend id="45" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="45" uid="690640f92cf84227801de597ea6f06a8" name="Criteria 10 Completion" meeting="true" start="2026-08-27" duration="0" complete="0" expand="true"/>
+        </task>
+        <task id="34" uid="372a175421144da5a8b07e13a516fe2d" name="Evaluation Completion" meeting="true" start="2026-08-27" duration="0" complete="0" expand="true">
+            <depend id="35" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="35" uid="71d2860cc9bb4fad91fc7027657f3c93" name="Project Completion" meeting="true" start="2026-08-27" duration="0" complete="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
