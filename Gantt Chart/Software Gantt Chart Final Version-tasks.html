@@ -1,857 +1,259 @@
-<html xmlns:ganttproject="http://ganttproject.sf.net/">
-    <head>
-        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>GanttProject - Software Gantt Chart Final Version</title>
-        <style>
-	    A:link {
-		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
-		FONT-SIZE: 14px ; COLOR: #FFFFFF;
-	    }
-	    A:visited {
-		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
-		FONT-SIZE: 14px ; COLOR: #FFFFFF; BACKGROUND: none
-	    }
-	    A:hover {
-		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
-		FONT-SIZE: 14px ; COLOR: white ; BACKGROUND: #57BB8A;
-	    }
-	    .notes {
-	      padding-left: 10px;
-	    }
-	    .notes pre {
-	      font-family: Roboto, Arial, sans-serif;
-	      font-size: 10px;
-	      margin-top: 0px;
-	      padding-top: 0px;
-	      margin-bottom: 5px;
-	    }
-	    .attachment {
-	      padding-left: 10px;
-	    }
-	    .attachment a:link {
-	      font-weight: normal;
-	      font-size: 12px;
-	      color: #57BB8A;
-	      background: white;
-	    }
-	    .attachment a:hover {
-	      font-weight: normal;
-	      text-decoration: underline;
-	      font-size: 12px;
-	      color: #57BB8A;
-	      background: white;
-	    }
-	    .attachment a:visited {
-	      font-weight: normal;
-	      font-size: 12px;
-	      background: white;
-	      color: gray;
-	    }
-	    TD {
-		FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Roboto, Arial, sans-serif
-	    }
-	    UL {
-		FONT-SIZE: 12px; FONT-FAMILY: Roboto, Arial, sans-serif
-	    }
-	    LI {
-		FONT-SIZE: 12px; FONT-FAMILY: Roboto, Arial, sans-serif
-	    }
-	    H1 {
-		FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: #57BB8A;
-	    }
-	    H2 {
-		FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: #000000;
-	    }
-	    H3 {
-		FONT-WEIGHT: bold; FONT-SIZE: 13pt; COLOR: #57BB8A;
-	    }
-	    H4 {
-		FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000;
-	    }
-	    H5 {
-		FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #57BB8A;
-	    }
-	    H6 {
-		FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000
-	    }
+<!DOCTYPE html>
+<html lang="en">
 
-	    </style>
-    </head>
-    <body bgcolor="white">
-        <center>
-            <style>
-div.project_name {
-  font-size: 150%;
-  color: black;
-  font-weight: bold;
-  border-top: solid #57BB8A 5px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 5px;
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Software SAT - Project Plan</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Roboto, Arial, sans-serif;
+background:#f5f7f6;
+color:#333;
 }
-div.page_links {
-  background: #57BB8A;
-  text-align: center;
+
+.project_name{
+font-size:28px;
+font-weight:700;
+background:#57BB8A;
+color:white;
+padding:18px 24px;
+box-shadow:0 2px 8px rgba(0,0,0,0.15);
 }
+
+.tabs{
+background:#57BB8A;
+text-align:center;
+padding:12px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tab-button{
+border:none;
+background:white;
+padding:12px 24px;
+margin:0 6px;
+cursor:pointer;
+font-weight:600;
+border-radius:8px;
+transition:all 0.2s ease;
+}
+
+.tab-button:hover{
+background:#f1f1f1;
+transform:translateY(-1px);
+}
+
+.tab-button.active{
+background:#dff3e8;
+color:#1f5c42;
+}
+
+.content{
+max-width:1400px;
+margin:auto;
+padding:25px;
+}
+
+.panel{
+display:none;
+}
+
+.panel.active{
+display:block;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,0.12);
+}
+
+th{
+background:#57BB8A;
+color:white;
+padding:14px;
+text-align:left;
+font-weight:600;
+}
+
+td{
+border:1px solid #e6e6e6;
+padding:12px;
+}
+
+tr:nth-child(even){
+background:#f8faf9;
+}
+
+tr:hover{
+background:#eef8f2;
+}
+
+.footer{
+background:#57BB8A;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:30px;
+font-weight:500;
+}
+
 </style>
-            <center>
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td bgcolor="#dddddd">
-                            <div class="project_name">Task Breakdown | Project Plan</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="page_links">
-          <a href="index.html">Gantt</a> |
-          <a href="Software Gantt Chart Final Version-tasks.html">Tasks</a> 
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </center>
-            <br>
-            <style>
-td.header {
-    background: #57BB8A;
-    color: white;
-    padding: 12px;
-    border: none;
+
+<script>
+
+function showTab(tabId){
+
+document.querySelectorAll('.panel')
+.forEach(p => p.classList.remove('active'));
+
+document.querySelectorAll('.tab-button')
+.forEach(b => b.classList.remove('active'));
+
+document.getElementById(tabId).classList.add('active');
+document.getElementById(tabId + '-btn').classList.add('active');
+
 }
 
-td.cell {
-    padding: 12px;
-    border-bottom: 1px solid #e0e0e0;
-    background: white;
-}
+</script>
 
-tr:hover td.cell {
-    background: #eef8f2;
-}
+</head>
 
-h5.header {
-    margin: 0;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-}
+<body>
 
-table {
-    border-collapse: collapse;
-}
-</style>
-            <table border="0" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td valign="top" class="header">
-                        <h5 class="header">Name</h5>
-                    </td><td valign="top" class="header">
-                        <h5 class="header">Begin date</h5>
-                    </td><td valign="top" class="header">
-                        <h5 class="header">End date</h5>
-                    </td><td valign="top" class="header">
-                        <h5 class="header">Resources</h5>
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Analysis</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">5/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">3/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">1.1 - Develop a Brief</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">5/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">7/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">1.2 - Prepare Gantt Chart</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">8/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">15/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">1.3 - Document Gantt Chart</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">18/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">20/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Criteria 1 Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">21/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">21/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">2.1 - Document &amp; Prepare Data</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">21/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">25/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">2.2 - Illustrate the Relationship between Users, Data &amp; Systems</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">26/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Criteria 2 Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">28/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">28/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">3.1 - Document Proposed Software Solution as part of SRS (requirements, scope &amp; constraints)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">28/5/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">1/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">3.2 - Document Process of Critical and Creative Thinking</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">2/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">3/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Criteria 3 Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">4/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">4/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Analysis Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">4/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">4/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Design</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">4/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">15/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">4.1 - Generate Design Ideas (Solution Design)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">4/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">8/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">4.2 - Develop &amp; Apply Evaluation Criteria (Evaluation Criteria)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">9/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">9/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Criteria 4 Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">5.1 - Produce Detailed Designs (Solution Design)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">5.2 - Document the use of Design Principles</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">15/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">15/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">5.3 - Document the Process of Critical and Creative Thinking</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">15/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">15/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Criteria 5 Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">18/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">18/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Design Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">18/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">18/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Development</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">18/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">19/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">6.1 - Develop the Solution using a Range of Programming Features (Manipulation)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">18/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">22/7/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">6.2 - Create and Ulitilise a Range of Data Types</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">22/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">6/7/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">7.1 - Verify use of Suitable Naming Conventions</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">23/7/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">31/7/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">7.2 - Write Internal Documentation (Documentation)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">24/6/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">31/7/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">7.3 - Apply Appropriate Validation Techniques (Validation)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">23/7/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">6/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Criteria 6 Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">7/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">7/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Criteria 7 Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">7/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">7/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">8.1 - Document the Use of Debugging and Testing Techniques (Testing &amp; Documentation)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">7/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">8.2 - Document the Process of Critical and Creative Thinking</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">11/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">12/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Criteria 8 Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">13/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">13/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">9.1 - Prepare Beta Testing Plan and Test Scenarios (Testing)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">13/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">14/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">9.2 - Conduct Beta Testing (Testing)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">17/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">18/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">9.3 - Document Results of Beta Testing (Documentation)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">19/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">19/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">9.4 - Document Recommended Modifications Based on Results (Documentation)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">19/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">19/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Criteria 9 Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">20/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">20/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Development Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">20/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">20/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Evaluation</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">20/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">26/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10.1 - Document the Evaluation of Efficiency and Effectiveness (Report)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">20/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">20/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10.2 - Document Evidence of Critical &amp; Creative Thinking</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">21/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">21/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10.3 - Document Modifications made to Initial Project Plan (Report)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">25/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">25/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10.4 - Assess the Effectiveness of the Project Plan (Strategy)</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">26/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">26/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Criteria 10 Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Evaluation Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Project Completion</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27/8/26</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-            </table>
-        </center>
-        <br>
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-            <tr>
-                <td bgcolor="#57BB8A" width="50%"><font color="#FFFFFF"><b>Ganttproject (3.3.3311)</b></font></td><td bgcolor="#57BB8A" width="50%" align="right"><b><a href="http://ganttproject.biz">ganttproject.biz</a></b>
-                    <br>
-                    <b>21/5/26 - 7:40:25 pm</b></td>
-            </tr>
-        </table>
-    </body>
+<div class="project_name">
+Software Development SAT | Project Plan
+</div>
+
+<div class="tabs">
+
+<button id="analysis-btn" class="tab-button active" onclick="showTab('analysis')">Analysis</button>
+<button id="design-btn" class="tab-button" onclick="showTab('design')">Design</button>
+<button id="development-btn" class="tab-button" onclick="showTab('development')">Development</button>
+<button id="evaluation-btn" class="tab-button" onclick="showTab('evaluation')">Evaluation</button>
+
+</div>
+
+<div class="content">
+
+<!-- ================= ANALYSIS ================= -->
+<div id="analysis" class="panel active">
+
+<table>
+<tr><th>Task</th><th>Begin</th><th>End</th></tr>
+
+<tr><td>Analysis Phase</td><td>5/5/26</td><td>4/6/26</td></tr>
+<tr><td>1.1 Develop a Brief</td><td>5/5/26</td><td>7/5/26</td></tr>
+<tr><td>1.2 Prepare Gantt Chart</td><td>8/5/26</td><td>15/5/26</td></tr>
+<tr><td>1.3 Document Gantt Chart</td><td>18/5/26</td><td>20/5/26</td></tr>
+<tr><td>Criteria 1 Completion</td><td>21/5/26</td><td>21/5/26</td></tr>
+
+<tr><td>2.1 Document & Prepare Data</td><td>21/5/26</td><td>25/5/26</td></tr>
+<tr><td>2.2 Users, Data & Systems Relationship</td><td>26/5/26</td><td>27/5/26</td></tr>
+<tr><td>Criteria 2 Completion</td><td>28/5/26</td><td>28/5/26</td></tr>
+
+<tr><td>3.1 SRS Requirements & Constraints</td><td>28/5/26</td><td>1/6/26</td></tr>
+<tr><td>3.2 Critical & Creative Thinking</td><td>2/6/26</td><td>3/6/26</td></tr>
+<tr><td>Criteria 3 Completion</td><td>4/6/26</td><td>4/6/26</td></tr>
+
+<tr><td>Analysis Completion</td><td>4/6/26</td><td>4/6/26</td></tr>
+
+</table>
+
+</div>
+
+<!-- ================= DESIGN ================= -->
+<div id="design" class="panel">
+
+<table>
+<tr><th>Task</th><th>Begin</th><th>End</th></tr>
+
+<tr><td>Design Phase</td><td>4/6/26</td><td>18/6/26</td></tr>
+
+<tr><td>4.1 Generate Design Ideas</td><td>4/6/26</td><td>8/6/26</td></tr>
+<tr><td>4.2 Evaluation Criteria</td><td>9/6/26</td><td>9/6/26</td></tr>
+<tr><td>Criteria 4 Completion</td><td>10/6/26</td><td>10/6/26</td></tr>
+
+<tr><td>5.1 Detailed Designs</td><td>10/6/26</td><td>10/6/26</td></tr>
+<tr><td>5.2 Design Principles</td><td>15/6/26</td><td>15/6/26</td></tr>
+<tr><td>5.3 Critical & Creative Thinking</td><td>15/6/26</td><td>15/6/26</td></tr>
+
+<tr><td>Criteria 5 Completion</td><td>18/6/26</td><td>18/6/26</td></tr>
+<tr><td>Design Completion</td><td>18/6/26</td><td>18/6/26</td></tr>
+
+</table>
+
+</div>
+
+<!-- ================= DEVELOPMENT ================= -->
+<div id="development" class="panel">
+
+<table>
+<tr><th>Task</th><th>Begin</th><th>End</th></tr>
+
+<tr><td>Development Phase</td><td>18/6/26</td><td>20/8/26</td></tr>
+
+<tr><td>6.1 Programming Features</td><td>18/6/26</td><td>22/7/26</td></tr>
+<tr><td>6.2 Data Types</td><td>22/6/26</td><td>6/7/26</td></tr>
+
+<tr><td>7.1 Naming Conventions</td><td>23/7/26</td><td>31/7/26</td></tr>
+<tr><td>7.2 Internal Documentation</td><td>24/6/26</td><td>31/7/26</td></tr>
+<tr><td>7.3 Validation Techniques</td><td>23/7/26</td><td>6/8/26</td></tr>
+
+<tr><td>Criteria 6 Completion</td><td>7/8/26</td><td>7/8/26</td></tr>
+<tr><td>Criteria 7 Completion</td><td>7/8/26</td><td>7/8/26</td></tr>
+
+<tr><td>8.1 Debugging & Testing</td><td>7/8/26</td><td>10/8/26</td></tr>
+<tr><td>8.2 Critical & Creative Thinking</td><td>11/8/26</td><td>12/8/26</td></tr>
+
+<tr><td>Criteria 8 Completion</td><td>13/8/26</td><td>13/8/26</td></tr>
+
+<tr><td>9.1 Beta Testing Plan</td><td>13/8/26</td><td>14/8/26</td></tr>
+<tr><td>9.2 Conduct Beta Testing</td><td>17/8/26</td><td>18/8/26</td></tr>
+<tr><td>9.3 Results</td><td>19/8/26</td><td>19/8/26</td></tr>
+<tr><td>9.4 Recommendations</td><td>19/8/26</td><td>19/8/26</td></tr>
+
+<tr><td>Criteria 9 Completion</td><td>20/8/26</td><td>20/8/26</td></tr>
+
+<tr><td>Development Completion</td><td>20/8/26</td><td>20/8/26</td></tr>
+
+</table>
+
+</div>
+
+<!-- ================= EVALUATION ================= -->
+<div id="evaluation" class="panel">
+
+<table>
+<tr><th>Task</th><th>Begin</th><th>End</th></tr>
+
+<tr><td>Evaluation Phase</td><td>20/8/26</td><td>27/8/26</td></tr>
+
+<tr><td>10.1 Efficiency & Effectiveness</td><td>20/8/26</td><td>20/8/26</td></tr>
+<tr><td>10.2 Critical Thinking Evidence</td><td>21/8/26</td><td>21/8/26</td></tr>
+<tr><td>10.3 Project Plan Modifications</td><td>25/8/26</td><td>25/8/26</td></tr>
+<tr><td>10.4 Effectiveness Assessment</td><td>26/8/26</td><td>26/8/26</td></tr>
+
+<tr><td>Criteria 10 Completion</td><td>27/8/26</td><td>27/8/26</td></tr>
+<tr><td>Project Completion</td><td>27/8/26</td><td>27/8/26</td></tr>
+
+</table>
+
+</div>
+
+</div>
+
+<div class="footer">
+Software Development SAT - 2026
+</div>
+
+</body>
 </html>
