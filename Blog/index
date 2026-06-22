@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fern Identifier Blog</title>
+
+<style>
+    body {
+        font-family: 'Roboto', Arial, sans-serif;
+        background: #f4f6f5;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+    }
+
+    .blog-entry {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .entry-header {
+        border-left: 5px solid #57BB8A;
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    .date {
+        font-size: 14px;
+        color: #888;
+    }
+
+    h2 {
+        margin: 5px 0;
+        color: #2c3e50;
+    }
+
+    .qa {
+        margin-top: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fafafa;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 8px;
+    }
+
+    textarea {
+    width: 100%;
+    min-height: 180px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+    /* screenshot styling */
+    .screenshot {
+        width: 100%;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .no-screenshot {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px dashed #aaa;
+        border-radius: 6px;
+        color: #777;
+        background: white;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Critical & Creative Questions Blog</h1>
+
+<!-- BLOG ENTRY 1 -->
+<div class="blog-entry">
+
+    <div class="entry-header">
+        <div class="date">19 June 2026</div>
+        <h2>Criteria 2</h2>
+    </div>
+
+    <div class="qa">
+        <label>Creative Thinking</label>
+        <textarea>
+Who are my actors in my software solution?
+My main actor is the user while my secondary actor consists of the developer, this was reflected in my use case diagram which showed the user intiating various processes to identify ferns while the developer intiated secondary processes that dealt with the backend of creating, modifying and deleting fern keys and training images or reading error reports.
+
+This question allowed me to better define my actors and their roles within the system before designing my use case diagram, ensuring no use cases were left out.
+</textarea>
+        <label>Follow-up</label>
+        <textarea>
+Why is a use case diagram required?
+A use case diagram was the most effective way to visualise how my system would interact with actors, being the best tool to explain the workings of my system my client for briefing as opposed to attempting to explain by word. Ultimately the presence of a use case diagram streamlined client briefing.
+
+This question allowed me to understand the importance of a use case diagram and tailor my use case diagram to enhancing understanding of user interaction with the system through actor use case association.
+</textarea>
+        <label>Screenshot Evidence</label>
+        <img class="screenshot"
+             src="screenshot4.png"
+             alt="Screenshot evidence"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+        <div class="no-screenshot" style="display:none;">
+            No screenshot provided
+        </div>
+    </div>
+
+    <div class="qa">
+        <label>Critical Thinking</label>
+        <textarea>How can I show the fern identification?
+
+By using a data flow diagram to visualise the inner processes of my system, I was able to demonstrate how ferns are identified through a a key based questionaire system or processed photos through photo recognition which I was able to develop in to functional requirements later.
+
+This question aided me in designing my data flow diagram as it gave me a basis on what to depict, the flow of data - specifically the flow of data as the user attempts to identify a fern
+</textarea>
+
+        <label>Follow-up</label>
+        <textarea>Why is the visualisation of the flow of data important?
+
+Visualising the flow of data was crucial to ensure all data required was accounted for and that when it came to development it could be refered back to as a blue print, allowing for easy identification of what data should be inputted and what data should be outputted at each process
+
+This question emphasised the importance of data flow, demonstrating to myself how it could be refered back to later as a blue print or instruction manual for the input and output of processes in the development stage.</textarea>
+
+        <label>Screenshot Evidence</label>
+        <img class="screenshot"
+             src="screenshot5.png"
+             alt="Screenshot evidence"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+        <div class="no-screenshot" style="display:none;">
+            No screenshot provided
+        </div>
+    </div>
+
+    <div class="qa">
+        <label>Creative Thinking</label>
+        <textarea>What is wrong with my current data flow set up?
+
+At the time, I had two seperate databases for fern keys and fern training images respectively, however this appeared confusing when shown to others and also seemed convoluted to implement during development. This lead to the decision of combining the two data bases in to one.
+
+This question allowed me to better streamline the data flow of my system, as its previous convoluted design with two databases was confusing and ultimately seemed difficult to implement later in defense.
+</textarea>
+
+        <label>Follow-up</label>
+        <textarea>What is missing from my current data flow set up?
+
+At the time, I also only had a process of the user submitting the mis-identification report, however there was no process in which the external entity developer would interact with these which failed to show the full data flow referenced in my functional requirements. Editing my data flow to include a process in which the developer external entity would recieve and review these mis-identification reports amended this issue.
+
+This question allowed me to identify missing data flow in my DFD diagram, ensuring all data was accounted for during the development phase.
+</textarea>
+
+        <label>Screenshot Evidence</label>
+        <img class="screenshot"
+             src="screenshot6.png"
+             alt="Screenshot evidence"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+        <div class="no-screenshot" style="display:none;">
+            No screenshot provided
+        </div>
+    </div>
+
+</div>
+
+<!-- BLOG ENTRY 2 -->
+<div class="blog-entry">
+
+    <div class="entry-header">
+        <div class="date">19 June 2026</div>
+        <h2>Criteria 3</h2>
+    </div>
+
+    <div class="qa">
+        <label>Critical Thinking</label>
+        <textarea placeholder="">
+Why is my scope to The City of Wyndham?
+
+The City of Wyndham only contains a relatively small amount of native fern species which aligns with my economic constraints of being a full-time high-school student with limited time, elsewise I risk being too shallow or inaccurate with identification capabilities. Furthermore this improves originality by serving as a tool specific and more accurate to The City of Wyndham.
+
+This question allowed me to justify why The City of Wyndham was an ideal area for my scope due and why a larger area was ill fitted.
+</textarea>
+
+        <label>Follow-up</label>
+        <textarea placeholder="Follow-up question...">
+Who would benefit from a tool like this within The City of Wyndham?
+
+After doing some research using surveys, I found there was a considerate fern hobbyist following within Wyndham which would benefit from this tool. After following up with my client in the interview who also frequently visited The City of Wyndham, it was shown that it was an ideal area of scope due to its manageable natural fern population and fern following.
+
+This question allowed me to measure the area of the market I am attempting to fulfill and who would benefit from a fern identification tool within Wyndham.
+</textarea>
+
+        <label>Screenshot Evidence</label>
+        <img class="screenshot"
+             src="screenshot1.png"
+             alt="Screenshot evidence"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+        <div class="no-screenshot" style="display:none;">
+            No screenshot provided
+        </div>
+    </div>
+
+    <div class="qa">
+        <label>Question 2</label>
+        <textarea>What is surprising about my user classes?
+
+After conducting surveys, a wide range of users were established which could be grouped into seperate users classes based off their fern experience and interest, however one defining feature is they all varied in technical expertise and fern experience.
+
+This question made me realise the variety of users that my software solution would have to accomodate for to ensure ease of use for all user classes.</textarea>
+
+        <label>Follow-up</label>
+        <textarea>
+Whats useful about these user classes?
+
+The existence of these varied user classes allowed me to tailor my non-functional requirements and constraints accordling, reflected in my social constraints and non-functional requirements discussing intuitiveness and ease of use in terms of navigating to accomodate a wide range of technical expertise and fern experience across user classes.
+
+This question allowed me to better understand how I should tailor my NRFs and constraints around my user classes to ensure my software solution is intuitive and easy to use for all my target users.
+</textarea>
+
+        <label>Screenshot Evidence</label>
+        <img class="screenshot"
+             src="screenshot2.png"
+             alt="Screenshot evidence"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+        <div class="no-screenshot" style="display:none;">
+            No screenshot provided
+        </div>
+    </div>
+
+    <div class="qa">
+        <label>Creative Thinking</label>
+        <textarea>
+What do I want my software solution to look like?
+Considering my solution aims to be an identification tool for ferns, I choose to employ a green colour scheme which themetically fit with ferns. This was an attempt to make the solution appeal to fern hobbyist who are my main users.
+
+This question allowed me to unpack what I wanted my software solution to be look like before beginning my ideation tools, giving me valuable insight to design my mood board.
+</textarea>
+        <label>Follow-up</label>
+        <textarea>
+What is wrong with my current colour scheme choice?
+
+Previously, the green colour scheme made it read to hard read text, which challenged my non-functional requirements discussing ease of navigation. This lead to the adoption of a mix of white and green, which enhanced readability dramatically and was reflected in my non-functional requirements.
+
+This question demonstrated the issue with my current colour choices of my software solution, leading to my decision to adopt a better contrasting green and white that dramatically enhanced readability.</textarea>
+
+        <label>Screenshot Evidence</label>
+        <img class="screenshot"
+             src="screenshot3.png"
+             alt="Screenshot evidence"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+        <div class="no-screenshot" style="display:none;">
+            No screenshot provided
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
