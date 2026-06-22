@@ -3,67 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design Documentation</title>
 
 <style>
-    body {
-        font-family: Roboto, Arial, sans-serif;
-        background: #f5f7f6;
-        margin: 0;
-        padding: 30px;
-    }
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Roboto, Arial, sans-serif;
+    background: #f5f7f6;
+}
 
+.container {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    gap: 25px;
+    height: 700px;
+}
+
+.image-section {
+    flex: 2;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+    border: 1px solid #d9e2dc;
+    border-radius: 12px;
+}
+
+.annotation-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.tab-button {
+    padding: 12px;
+    border: none;
+    background: #dfe7e2;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.tab-button:hover {
+    background: #c9d7cf;
+}
+
+.tab-button.active {
+    background: #4f7c5c;
+    color: white;
+}
+
+.annotation-content {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 6px solid #4f7c5c;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow-y: auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h2 {
+    margin-top: 0;
+    color: #2f4f3f;
+}
+
+@media (max-width: 900px) {
     .container {
-        max-width: 1200px;
-        margin: auto;
-        display: flex;
-        gap: 30px;
-        align-items: flex-start;
+        flex-direction: column;
+        height: auto;
     }
 
     .image-section {
-        flex: 2;
+        height: 400px;
     }
-
-    .image-section img {
-        width: 100%;
-        border-radius: 12px;
-        border: 1px solid #d9e2dc;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .annotation-section {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .annotation-box {
-        background: white;
-        border-left: 5px solid #4f7c5c;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    }
-
-    .annotation-box h3 {
-        margin: 0 0 8px 0;
-        color: #2f4f3f;
-        font-size: 18px;
-    }
-
-    .annotation-box p {
-        margin: 0;
-        line-height: 1.5;
-        color: #444;
-    }
-
-    @media (max-width: 900px) {
-        .container {
-            flex-direction: column;
-        }
-    }
+}
 </style>
 </head>
 <body>
@@ -72,47 +106,62 @@
 
     <!-- Image -->
     <div class="image-section">
-        <img src="your-image.jpg" alt="Design Evidence">
+        <img src="your-image.jpg" alt="Evidence">
     </div>
 
     <!-- Annotations -->
     <div class="annotation-section">
 
-        <div class="annotation-box">
-            <h3>Moodboard</h3>
-            <p>
-                Demonstrates the visual style, colour palette, typography,
-                and overall aesthetic direction intended for the project.
-            </p>
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="showTab('moodboard', this)">Moodboard</button>
+            <button class="tab-button" onclick="showTab('mindmap', this)">Mind Map</button>
+            <button class="tab-button" onclick="showTab('brainstorm', this)">Brainstorm</button>
+            <button class="tab-button" onclick="showTab('sketch', this)">Sketch</button>
         </div>
 
-        <div class="annotation-box">
-            <h3>Mind Map</h3>
-            <p>
-                Shows the relationships between key concepts, ideas,
-                requirements, and project considerations.
-            </p>
-        </div>
+        <div class="annotation-content">
 
-        <div class="annotation-box">
-            <h3>Brainstorm</h3>
-            <p>
-                Records initial ideas, potential features, design directions,
-                and problem-solving approaches generated during planning.
-            </p>
-        </div>
+            <div id="moodboard" class="tab-content active">
+                <h2>Moodboard</h2>
+                <p>Add your moodboard annotations here.</p>
+            </div>
 
-        <div class="annotation-box">
-            <h3>Sketch</h3>
-            <p>
-                Provides an early visual representation of layouts,
-                interfaces, or design concepts before development.
-            </p>
+            <div id="mindmap" class="tab-content">
+                <h2>Mind Map</h2>
+                <p>Add your mind map annotations here.</p>
+            </div>
+
+            <div id="brainstorm" class="tab-content">
+                <h2>Brainstorm</h2>
+                <p>Add your brainstorm annotations here.</p>
+            </div>
+
+            <div id="sketch" class="tab-content">
+                <h2>Sketch</h2>
+                <p>Add your sketch annotations here.</p>
+            </div>
+
         </div>
 
     </div>
 
 </div>
+
+<script>
+function showTab(tabId, button) {
+
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    document.getElementById(tabId).classList.add('active');
+    button.classList.add('active');
+}
+</script>
 
 </body>
 </html>
