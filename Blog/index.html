@@ -66,8 +66,11 @@
     padding: 8px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    resize: vertical;
+    resize: none;
     font-family: 'Roboto', Arial, sans-serif;
+    background: #fafafa;
+    cursor: default;
+    pointer-events: none;
 }
     /* screenshot styling */
     .screenshot {
@@ -281,6 +284,12 @@ This question demonstrated the issue with my current colour choices of my softwa
 </div>
 
 </div>
+
+<script>
+document.querySelectorAll('textarea').forEach(textarea => {
+    textarea.readOnly = true;
+});
+</script>
 
 </body>
 </html>
