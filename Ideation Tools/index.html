@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Documentation</title>
+
+<style>
+    body {
+        font-family: Roboto, Arial, sans-serif;
+        background: #f5f7f6;
+        margin: 0;
+        padding: 30px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    .image-section {
+        flex: 2;
+    }
+
+    .image-section img {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid #d9e2dc;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .annotation-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .annotation-box {
+        background: white;
+        border-left: 5px solid #4f7c5c;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+
+    .annotation-box h3 {
+        margin: 0 0 8px 0;
+        color: #2f4f3f;
+        font-size: 18px;
+    }
+
+    .annotation-box p {
+        margin: 0;
+        line-height: 1.5;
+        color: #444;
+    }
+
+    @media (max-width: 900px) {
+        .container {
+            flex-direction: column;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Image -->
+    <div class="image-section">
+        <img src="your-image.jpg" alt="Design Evidence">
+    </div>
+
+    <!-- Annotations -->
+    <div class="annotation-section">
+
+        <div class="annotation-box">
+            <h3>Moodboard</h3>
+            <p>
+                Demonstrates the visual style, colour palette, typography,
+                and overall aesthetic direction intended for the project.
+            </p>
+        </div>
+
+        <div class="annotation-box">
+            <h3>Mind Map</h3>
+            <p>
+                Shows the relationships between key concepts, ideas,
+                requirements, and project considerations.
+            </p>
+        </div>
+
+        <div class="annotation-box">
+            <h3>Brainstorm</h3>
+            <p>
+                Records initial ideas, potential features, design directions,
+                and problem-solving approaches generated during planning.
+            </p>
+        </div>
+
+        <div class="annotation-box">
+            <h3>Sketch</h3>
+            <p>
+                Provides an early visual representation of layouts,
+                interfaces, or design concepts before development.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
