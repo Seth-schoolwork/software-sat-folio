@@ -57,11 +57,12 @@ body {
 }
 
 .tab-button:hover {
-    background: #c9d7cf;
+    background: #57bb8a;
+    opacity: 0.85;
 }
 
 .tab-button.active {
-    background: #4f7c5c;
+    background: #57bb8a;
     color: white;
 }
 
@@ -70,7 +71,7 @@ body {
     background: white;
     padding: 20px;
     border-radius: 12px;
-    border-left: 6px solid #4f7c5c;
+    border-left: 6px solid #57bb8a;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     overflow-y: auto;
 }
@@ -106,7 +107,7 @@ body {
 
     <!-- Image -->
     <div class="image-section">
-        <img src="your-image.jpg" alt="Evidence">
+        <img id="mainImage" src="moodboard.jpg" alt="Evidence">
     </div>
 
     <!-- Annotations -->
@@ -148,6 +149,13 @@ body {
 </div>
 
 <script>
+const imageMap = {
+    moodboard: "moodboard.jpg",
+    mindmap: "mindmap.jpg",
+    brainstorm: "brainstorm.jpg",
+    sketch: "sketch.jpg"
+};
+
 function showTab(tabId, button) {
 
     document.querySelectorAll('.tab-content').forEach(tab => {
@@ -160,6 +168,9 @@ function showTab(tabId, button) {
 
     document.getElementById(tabId).classList.add('active');
     button.classList.add('active');
+
+    // change image
+    document.getElementById("mainImage").src = imageMap[tabId];
 }
 </script>
 
