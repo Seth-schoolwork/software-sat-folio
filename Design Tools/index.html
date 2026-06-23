@@ -67,7 +67,7 @@
 
     <tr>
         <td>Fern Key Questionnaire Answer</td>
-        <td>Ask fern keys questions to narrow down fern species match in database.</td>
+        <td>Ask fern keys questions to narrow down fern species match in database and return it.</td>
 
         <td>
             <div class="pseudo-box">
@@ -92,7 +92,7 @@ FUNCTION IdentifyFern()
             END IF
 
         ELSE
-            RETURN FernGroupA_Result
+            RETURN FernGroupA Result
         END IF
 
     ELSE IF Answer1 leads to GroupB THEN
@@ -103,13 +103,45 @@ FUNCTION IdentifyFern()
         IF Answer2B leads to SubgroupB1 THEN
             RETURN FernTypeB1
         ELSE
-            RETURN FernGroupB_Result
+            RETURN FernGroupB Result
         END IF
 
     ELSE
         RETURN "Unable to identify fern."
     END IF
 
+END FUNCTION
+            </div>
+        </td>
+
+        <td>Fern Identification Results</td>
+    </tr>
+
+    <tr>
+        <td>Fern Image</td>
+        <td>Match fern image against fern training images in database to find a match and return it.</td>
+
+        <td>
+            <div class="pseudo-box">
+FUNCTION MatchFernImage()
+    BestMatchScore ← 0
+    BestMatchFern ← None
+        
+    INPUT UserFernImage
+    FOR TrainingImage IN Database
+        COMPARE MatchScore between TrainingImage and UserFernImage
+
+        IF MatchScore > BestMatchScore THEN
+            BestMatchScore ← MatchScore
+            BestMatchFern ← TrainingImage.FernSpecies
+        END IF
+    END FOR
+
+    IF BestMatchFern ≠ None THEN
+        RETURN BestMatchFern
+    ELSE
+        RETURN "Unable to identify fern."
+    END IF
 END FUNCTION
             </div>
         </td>
