@@ -71,11 +71,46 @@
 
         <td>
             <div class="pseudo-box">
-IF FernKey matches species in database THEN
-    RETURN FernIdentificationResult
-ELSE
-    RETURN "No match found"
-END IF
+FUNCTION IdentifyFern()
+
+    ASK Question1
+    GET Answer1
+
+    IF Answer1 leads to GroupA THEN
+
+        ASK Question2A
+        GET Answer2A
+
+        IF Answer2A leads to SubgroupA1 THEN
+            ASK Question3A1
+            GET Answer3A1
+
+            IF Answer3A1 == YES THEN
+                RETURN FernTypeA1
+            ELSE
+                RETURN FernTypeA2
+            END IF
+
+        ELSE
+            RETURN FernGroupA_Result
+        END IF
+
+    ELSE IF Answer1 leads to GroupB THEN
+
+        ASK Question2B
+        GET Answer2B
+
+        IF Answer2B leads to SubgroupB1 THEN
+            RETURN FernTypeB1
+        ELSE
+            RETURN FernGroupB_Result
+        END IF
+
+    ELSE
+        RETURN "Unable to identify fern."
+    END IF
+
+END FUNCTION
             </div>
         </td>
 
