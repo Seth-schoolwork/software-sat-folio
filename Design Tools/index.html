@@ -229,7 +229,7 @@ FernIdentified ← identified fern species ID
 IF Mis-IdentificationReportButton is clicked THEN
     CREATE NewReport
     NewReport.FernID ← FernIdentified
-    NewReport.CurrentTime ← current user time
+    NewReport.CurrentDate ← current date
 
     STORE NewReport in Database.MisIdentificationReports
 END IF
