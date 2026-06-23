@@ -69,7 +69,7 @@
     </tr>
 
     <tr>
-        <td>Fern Key Questionnaire Answer</td>
+        <td>Fern key questionnaire answer.</td>
         <td>Ask fern keys questions to narrow down fern species match in database and return it.</td>
 
         <td>
@@ -117,11 +117,11 @@ END FUNCTION
             </div>
         </td>
 
-        <td>Fern Identification Results</td>
+        <td>Fern identification results.</td>
     </tr>
 
     <tr>
-        <td>Fern Image</td>
+        <td>Fern image.</td>
         <td>Match fern image against fern training images in database to find a match and return it.</td>
 
         <td>
@@ -149,7 +149,29 @@ END FUNCTION
             </div>
         </td>
 
-        <td>Fern Identification Results</td>
+        <td>Fern identification results.</td>
+    </tr>
+
+    <tr>
+        <td>User presses undo button.</td>
+        <td>Previous question is returned and prior answer is discarded from identification pool.</td>
+        <td>
+            <div class="pseudo-box">
+IF UndoButton is clicked THEN
+   IF QuestionHistory is not empty THEN
+        REMOVE last question from QuestionHistory
+        REMOVE last answer from AnswerHistory
+        CurrentQuestion ← previous question
+
+        RECALCULATE fern match using updated AnswerHistory
+    ELSE 
+        DISPLAY "No previous question."
+    END IF
+END IF
+            </div>
+        </td>
+
+        <td>Restored previous question.</td>
     </tr>
 
 </table>
