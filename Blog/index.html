@@ -417,18 +417,18 @@ This question allowed me to consider what needed tweaking from my ideation tools
 
     <div class="qa">
         <label>Critical Thinking</label>
-        <textarea>What could be another colour palette I could of used instead for an earthy/organic feel?
+        <textarea>Who benefits from the usage of affordance?
 
-I could of used a stone grey and brown colour palette, which would of supported my earthy/organic feel outlined as apart of my non-functional requirements, offering as a contigency if my current green and brown colour palette proved difficult for readability.
-This question made me consider a possible contingency for my colour palette of green and brown, considering a stone grey and brown alternative.</textarea>
+Affordance provides an way for first-time users to navigate the site without the requirement for assistance, as measured in my evaluation criteria, my mock-up uses large amount of affordanceinherited from my sketch to achieve this.</textarea>
 
+This question prompted me to reflect on the role of affordance in my mock-up, and how it appeals to first-time users specifically who are measured in my evaluation criteria.
         <label>Follow-up</label>
         <textarea>
-What pattern do I notice with these colour palettes?
+What is an alternative way I could achieve this?
 
-My colour palettes, both my main and contingency, include a form of brown to ground it as earthy/organic tone. This suggests that brown is a useful colour to ground my application as earthy/organic when required in my detailed designs.
+I could ultilise text labels besides my buttons as a contigency if affordance does not work alone, ensuring the navigation process is streamlined for new users, meeting my evaluation criteria.
 
-This question allowed me to realise how both of my colour palettes, my main one and the contingency both include a brown, suggesting brown is a key colour to centre my application as earthy/organic.
+This question allowed me to consider an alternative beyond affordance to improve the navigation experience for new users, incase affordance alone is not enough to meet my evaluation criteria. 
 </textarea>
 
         <label>Screenshot Evidence</label>
@@ -443,21 +443,20 @@ This question allowed me to realise how both of my colour palettes, my main one 
     </div>
 
     <div class="qa">
-        <label>Creative Thinking</label>
+        <label>Critical Thinking</label>
         <textarea>
-What type of features do I want my solution to have?
-            
-My solution should include the ability to identify ferns through photo recognition and fern key questionnaires, moreover allow users to submit mis-identification reports. Elsewise, it should also allow the developer to read mis-identification reports and create,modify and delete fern keys and training images with built in tools, fulfilling my functional requirements.
+Where could a user make an error?
+Before this my fern image display IPO code did not include validation if the user went beyond the bounds of how many training images there were, which would throw an error and terminate my application. To fix this I added a range check that would cycle back to the beginning if the user input went out of bounds, improving robustness.
 
-This question helped me create and group my ideas to display on mind map, allowing me to consider what I wanted my software solution to do and the main components it splits into.
+This question helped me consider how a user could create an error while using my fern image carousel by going out of training image array bounds, which allowed me to improve robustness by accounting by using a range check to cycle to the beginning once out of bounds.
 </textarea>
         <label>Follow-up</label>
         <textarea>
-What is missing from my software solution?
-At the moment I felt as if I skipped a step jumping to morphological characteristics and the habitat of the identified fern as outlined in my functional requirements, which lead me to considering adding a small description of the identified fern as seen in my sketch.
-
-This question gave me insight into what could be include in to my software solution to improve the user experience, reflected in my sketch ideation tool where I added a short description segment for the identified fern.</textarea>
-
+What is an alternative fix?
+            
+I could change the carousel to randomly alternate between images instead of linearly increasing index until it hit the end and resetting, this would eliminate the possibility of going out of bounds by restricting the input to within bounds.
+            
+This question provided an alternative method to increase robustness, a different way to design the image carousel algorithm to avoid out of bound index errors.</textarea>
         <label>Screenshot Evidence</label>
         <img class="screenshot"
              src="screenshot3.png"
