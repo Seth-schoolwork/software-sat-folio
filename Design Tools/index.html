@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    .usecase-table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Roboto, Arial, sans-serif;
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+
+    .usecase-table th {
+        background-color: #57BB8A;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .usecase-table td {
+        border: 1px solid #d0d0d0;
+        padding: 12px;
+        vertical-align: top;
+        line-height: 1.5;
+    }
+
+    .usecase-table tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+    .usecase-table tr:hover {
+        background-color: #eef7ee;
+    }
+
+    /* Fancy pseudocode box */
+    .pseudo-box {
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: "Courier New", monospace;
+        padding: 12px;
+        border-radius: 8px;
+        border-left: 4px solid #57BB8A;
+        white-space: pre-wrap;
+        line-height: 1.4;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+</style>
+</head>
+
+<body>
+
+<table class="usecase-table">
+
+    <tr>
+        <th>Input</th>
+        <th>Process</th>
+        <th>Pseudocode</th>
+        <th>Output</th>
+    </tr>
+
+    <tr>
+        <td>Fern Key Questionnaire Answer</td>
+        <td>Match fern keys to fern species in database.</td>
+
+        <td>
+            <div class="pseudo-box">
+IF FernKey matches species in database THEN
+    RETURN FernIdentificationResult
+ELSE
+    RETURN "No match found"
+END IF
+            </div>
+        </td>
+
+        <td>Fern Identification Results</td>
+    </tr>
+
+</table>
+
+</body>
+</html>
