@@ -110,7 +110,7 @@ FUNCTION IdentifyFern()
         END IF
 
     ELSE
-        RETURN "Unable to identify fern."
+        RETURN None
     END IF
 
 END FUNCTION
@@ -131,7 +131,7 @@ FUNCTION MatchFernImage()
     BestMatchFern ← None
         
     INPUT UserFernImage
-    FOR TrainingImage IN Database
+    FOR TrainingImage IN Database.TrainingImages
         COMPARE MatchScore between TrainingImage and UserFernImage
 
         IF MatchScore > BestMatchScore THEN
@@ -143,7 +143,7 @@ FUNCTION MatchFernImage()
     IF BestMatchFern ≠ None THEN
         RETURN BestMatchFern
     ELSE
-        RETURN "Unable to identify fern."
+        RETURN None
     END IF
 END FUNCTION
             </div>
@@ -161,11 +161,9 @@ IF UndoButton is clicked THEN
    IF QuestionHistory is not empty THEN
         REMOVE last question from QuestionHistory
         REMOVE last answer from AnswerHistory
-        CurrentQuestion ← previous question
+        CurrentQuestion ← last question from QuestionHistory
 
         RECALCULATE fern match using updated AnswerHistory
-    ELSE 
-        DISPLAY "No previous question."
     END IF
 END IF
             </div>
@@ -179,7 +177,7 @@ END IF
         <td>Current fern image displayed is cycled through training images.</td>
         <td>
             <div class="pseudo-box">
-FernTrainingImages ← get fern database training images
+FernTrainingImages ← Database.TrainingImages 
 CurrentImageIndex ← 0
                 
 IF FernImageChangeButton is clicked THEN
@@ -194,6 +192,51 @@ END IF
         </td>
 
         <td>Next fern image from training dataset displayed.</td>
+    </tr>
+
+<tr>
+        <td>Fern identified.</td>
+        <td>Identified fern information is retrieved including image, morphological traits and habitat.</td>
+        <td>
+            <div class="pseudo-box">
+FernIdentified ← identified fern species ID
+
+IF FernIdentified ≠ None THEN
+    FernTrainingImages ←  Database.TrainingImages
+    CurrentImageIndex ← 0
+
+    DISPLAY FernTrainingImages[CurrentImageIndex]
+
+    DISPLAY FernIdentified.ShortDescription
+    DISPLAY FernIdentified.FrondInfo
+    DISPLAY FernIdentified.Rhizome
+    DISPLAY FernIdentified.Sori
+    DISPLAY FernIdentified.Structure
+    DISPLAY FernIdentified.Habitat
+END IF
+            </div>
+        </td>
+
+        <td>Identified fern information.</td>
+    </tr>
+
+<tr>
+        <td>User presses report mis-identification button.</td>
+        <td>Mis-identification report is created and stored including details like identified fern id.</td>
+        <td>
+            <div class="pseudo-box">
+FernIdentified ← identified fern species ID
+IF Mis-IdentificationReportButton is clicked THEN
+    CREATE NewReport
+    NewReport.FernID ← FernIdentified
+    NewReport.CurrentTime ← current user time
+
+    STORE NewReport in Database.MisIdentificationReports
+END IF
+            </div>
+        </td>
+
+        <td>Identified fern information.</td>
     </tr>
 
 </table>
